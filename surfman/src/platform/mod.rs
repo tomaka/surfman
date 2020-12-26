@@ -21,6 +21,11 @@ pub mod unix;
 #[cfg(linux)]
 pub use unix::default;
 
+#[cfg(target_os = "wasi")]
+pub mod wasi;
+#[cfg(target_os = "wasi")]
+pub use wasi as default;
+
 #[cfg(windows)]
 pub mod windows;
 #[cfg(angle_default)]
